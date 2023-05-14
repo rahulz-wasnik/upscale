@@ -1,0 +1,5 @@
+package com.upscale.learn.springdatajpa.entity;
+
+public class RiskProfile {
+
+}

@@ -1,0 +1,73 @@
+package java8newfeatures.collectors.ex2;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class Employee {
+	
+	int salary;
+	String name;
+	String departmentId;
+	Department department;
+		
+	
+}
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class Department {
+
+	
+	public Department(String id) {
+		super();
+		this.id = id;
+	}
+
+	private String id;
+	private List<Employee> employees;
+
+	
+}
+
+public class EmployeeWithHigheshSalaryInDepartment {
+
+	public static void main(String[] args) {
+		
+		Department dept = new Department("1");
+		Department dept2 = new Department("2");
+
+		Employee e1 = new Employee(10, "a", dept);
+		Employee e2 = new Employee(12, "b", dept);
+		Employee e3 = new Employee(12, "c", dept);
+
+		List<Employee> list = new ArrayList<>();
+		list.add(e1);
+		list.add(e2);
+		list.add(e3);
+		
+		Employee e4 = new Employee(10000, "d", dept2);
+		Employee e5 = new Employee(12000, "e", dept2);
+		Employee e6 = new Employee(14000, "f", dept2);
+
+		list.add(e4);
+		list.add(e5);
+		list.add(e6);
+		
+		Function<Employee, String> departmentId = (Employee employee) -> employee.getDepartment().getId();
+		
+		list.stream().collect(Collectors.groupingBy(departmentId));
+		
+		
+		
+	}
+}

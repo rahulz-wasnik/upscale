@@ -1,0 +1,16 @@
+package java8newfeatures;
+
+import java.util.Optional;
+
+public class RandomThings {
+
+	public static void main(String args[]) {
+		
+		Integer i = null;
+		Integer j = 10;
+		
+		Optional<Integer> optional = Optional.of(j);
+		
+		System.out.println(optional.isEmpty());
+	}
+}

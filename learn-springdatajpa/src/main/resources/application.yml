@@ -1,0 +1,26 @@
+server:
+   port: 8080
+
+logging:
+   level:
+      org:
+         hibernate:
+            type: error
+         springframework:
+            orm:
+               jpa: trace
+            jdbc: trace
+            transaction: trace
+
+
+spring:
+   datasource:
+      url: jdbc:mysql://localhost:3306/learn-springdatajpa?createDatabaseIfNotExist=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+   jpa:
+      show-sql: true
+      hibernate:
+         ddl-auto: create
+         format_sql: true

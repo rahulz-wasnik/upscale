@@ -1,0 +1,88 @@
+package java8newfeatures;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
+
+class EmployeeX {
+	
+	int salary;
+	String name;
+	
+	public EmployeeX(int salary, String name) {
+		super();
+		this.salary = salary;
+		this.name = name;
+	}
+
+	public EmployeeX() {
+		
+	}
+	
+	public int getSalary() {
+		return salary;
+	}
+
+	public String getName() {
+		return name;
+	}	
+	
+}
+
+class DepartmentX {
+
+	public DepartmentX(String id, List<Employee> employees) {
+		super();
+		this.id = id;
+		this.employees = employees;
+	}
+
+	private String id;
+	private List<Employee> employees;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+
+	
+}
+
+public class EmployeeWithHigheshSalaryInDepartment {
+
+	public static void main(String[] args) {
+
+		Employee e1 = new Employee(10, "a");
+		Employee e2 = new Employee(12, "b");
+		Employee e3 = new Employee(12, "c");
+
+		List<Employee> list = new ArrayList<>();
+		list.add(e1);
+		list.add(e2);
+		list.add(e3);
+		
+		Employee e4 = new Employee(10, "a");
+		Employee e5 = new Employee(12, "b");
+		Employee e6 = new Employee(12, "c");
+
+		List<Employee> listb = new ArrayList<>();
+		list.add(e4);
+		list.add(e5);
+		list.add(e6);
+		
+	}
+}

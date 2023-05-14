@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package java8newfeatures;
+
+import java.util.function.Function;
+
+/**
+ * @author Rahul
+ *
+ */
+public class FP01Functional {
+
+	private String name;
+	
+	FP01Functional()
+	   {
+	      name = "";
+	   }
+	FP01Functional(String name)
+	   {
+	      this.name = name;
+	      System.out.printf("MRDemo(String name) called with %s%n", name);
+	   }
+	   public static void main(String[] args)
+	   {
+	      Function<String, FP01Functional> function = FP01Functional::new;
+	      System.out.println(function.apply("some name"));
+	   }
+
+}

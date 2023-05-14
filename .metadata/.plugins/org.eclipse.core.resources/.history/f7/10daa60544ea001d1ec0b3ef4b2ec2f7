@@ -1,0 +1,57 @@
+package java8newfeatures.collectors.ex1;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+class Employee {
+	
+	int salary;
+	String name;
+	
+	public Employee() {
+		
+	}
+	
+	
+	public int getSalary() {
+		return salary;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
+	public Employee(int salary, String name) {
+		this.salary = salary;
+		this.name = name;
+	}
+	
+	
+}
+
+public class CollectorsInAction {
+
+	public static void main(String[] args) {
+		
+		Employee e1 = new Employee(10, "a");
+		Employee e2 = new Employee(12, "b");
+		Employee e3 = new Employee(12, "a");
+		
+		List<Employee> list = new ArrayList<>();
+		list.add(e1);
+		list.add(e2);
+		list.add(e3);
+		
+		// List employee salary
+		Map<Integer, List<Employee>> map = list.stream().collect(Collectors.groupingBy(Employee::getSalary));
+		
+		for (Map.Entry<Integer, List<Employee>> mapEntry: map.entrySet()) {
+			System.out.println("Employee with salary - " + mapEntry.getKey());
+			
+		}
+		
+	}
+
+}

@@ -1,0 +1,6 @@
+package com.upscale.learn.springdatajpa.configuration;
+
+public class UnderstandApplicationRunner {
+	how to you execute something before and after a spring application starts
+}
+

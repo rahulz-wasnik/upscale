@@ -1,0 +1,25 @@
+package com.upscale.learn.springdatajpa.configuration;
+
+import org.springframework.context.SmartLifecycle;
+
+public class LifeCyclye implements SmartLifecycle {
+
+	@Override
+	public void start() {
+		System.out.println("Lifecycle start");
+
+	}
+
+	@Override
+	public void stop() {
+		System.out.println("Lifecycle end");
+
+	}
+
+	@Override
+	public boolean isRunning() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

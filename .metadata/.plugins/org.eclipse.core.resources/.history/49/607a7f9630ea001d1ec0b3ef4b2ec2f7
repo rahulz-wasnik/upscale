@@ -1,0 +1,36 @@
+package java8newfeatures;
+
+import java.util.List;
+
+public class Department {
+
+	private String id;
+	private List<Employee> employees;
+	
+	public Department() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Department(String id, List<Employee> employee) {
+		this.id = id;
+		this.employees = employees;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+
+	
+}

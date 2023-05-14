@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spring-boot-admin/src/main/resources/application&apos; to &apos;application.yml&apos;" description="Rename resource &apos;application&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/application" name="application.yml" stamp="1676652442697" updateReferences="true"/>
+</session>

@@ -1,0 +1,15 @@
+package com.upscale.learn.springdatajpa.configuration;
+
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
+
+@Component
+public class UnderstandingCommandLiner implements ApplicationRunner {
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+        // code to execute after the application has started
+    }
+
+}

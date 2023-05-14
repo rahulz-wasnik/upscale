@@ -1,0 +1,5 @@
+package com.upscale.springsecurityclient.controller;
+
+public class HelloController {
+
+}

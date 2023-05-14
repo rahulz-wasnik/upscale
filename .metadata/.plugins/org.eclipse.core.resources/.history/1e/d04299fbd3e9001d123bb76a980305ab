@@ -1,0 +1,6 @@
+package com.upscale.learn.springdatajpa.configuration;
+
+public class UnderstandApplicationRunner {
+	
+}
+

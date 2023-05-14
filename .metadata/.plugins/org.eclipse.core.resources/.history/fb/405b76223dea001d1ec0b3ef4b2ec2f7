@@ -1,0 +1,12 @@
+package java8newfeatures.collectors.ex3;
+
+public class CountOfCharectersInString {
+
+	public static void main(String[] args) {
+		
+		String str = "I am having a very long long string";
+		
+		str.split("")
+	}
+
+}

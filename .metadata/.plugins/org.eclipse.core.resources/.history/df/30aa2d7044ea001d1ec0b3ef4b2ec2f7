@@ -1,0 +1,5 @@
+package java8newfeatures.collectors.ex3;
+
+public class AverageSalaryByDept {
+
+}

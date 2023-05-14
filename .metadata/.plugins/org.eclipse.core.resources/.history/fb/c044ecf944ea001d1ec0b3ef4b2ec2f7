@@ -1,0 +1,5 @@
+package java8newfeatures.collectors.ex5;
+
+public class FilterEmployesByName {
+
+}

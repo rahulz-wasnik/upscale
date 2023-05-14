@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.upscale.learn.springdatajpa.configuration.Snippet.java&apos; to &apos;UnderstandApplicationRunner.java&apos;&#x0D;&#x0A;- Original project: &apos;learn-springdatajpa&apos;&#x0D;&#x0A;- Original element: &apos;com.upscale.learn.springdatajpa.configuration.Snippet.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.upscale.learn.springdatajpa.configuration.UnderstandApplicationRunner.java&apos;" description="Rename compilation unit &apos;Snippet.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.upscale.learn.springdatajpa.configuration{Snippet.java" name="UnderstandApplicationRunner.java" references="false" stamp="1683133119288" version="1.0"/>
+</session>

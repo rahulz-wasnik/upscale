@@ -1,0 +1,46 @@
+package java8newfeatures;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
+
+public class EmployeeWithHigheshSalaryInDepartment {
+
+	public static void main(String[] args) {
+
+		Employee e1 = new Employee(10, "a");
+		Employee e2 = new Employee(12, "b");
+		Employee e3 = new Employee(12, "c");
+
+		List<Employee> list = new ArrayList<>();
+		list.add(e1);
+		list.add(e2);
+		list.add(e3);
+		
+		Employee e4 = new Employee(10000, "d");
+		Employee e5 = new Employee(120, "e");
+		Employee e6 = new Employee(1000002, "f");
+
+		List<Employee> listb = new ArrayList<>();
+		list.add(e4);
+		list.add(e5);
+		list.add(e6);
+		
+		
+		Department department = new Department("1", list);
+		Department departmentb = new Department("2", listb);
+		
+		
+//		// List employee salary
+//		Map<Integer, List<Employee>> map = list.stream().collect(Collectors.groupingBy(Employee::getSalary));
+//
+//		for (Map.Entry<Integer, List<Employee>> mapEntry : map.entrySet()) {
+//			System.out.println("Employee with salary - " + mapEntry.getKey());
+//
+//		}
+
+	}
+}

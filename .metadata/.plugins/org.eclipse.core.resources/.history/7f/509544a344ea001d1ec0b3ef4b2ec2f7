@@ -1,0 +1,74 @@
+package java8newfeatures.collectors.ex4;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class Employee {
+	
+	int salary;
+	String name;
+	int departmentId;
+	Department department;
+}
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class Department {
+
+	
+	public Department(String id) {
+		super();
+		this.id = id;
+	}
+
+	private String id;
+	private List<Employee> employees;
+
+	
+}
+
+public class AverageSalaryByDept {
+
+	public static void main(String[] args) {
+		
+		Department dept = new Department("1");
+		Department dept2 = new Department("2");
+
+		Employee e1 = new Employee(10, "a", 1, dept);
+		Employee e2 = new Employee(12, "b", 1, dept);
+		Employee e3 = new Employee(12, "c", 1, dept);
+
+		List<Employee> list = new ArrayList<>();
+		list.add(e1);
+		list.add(e2);
+		list.add(e3);
+		
+		Employee e4 = new Employee(10000, "d", 2,  dept2);
+		Employee e5 = new Employee(12000, "e", 2,  dept2);
+		Employee e6 = new Employee(14000, "f", 2,  dept2);
+
+		list.add(e4);
+		list.add(e5);
+		list.add(e6);
+		
+		Function<Employee, String> departmentId = (Employee employee) -> employee.getDepartment().getId();
+		
+		Map<String, Optional<Employee>> employee = list.stream().collect(Collectors.groupingBy(departmentId, Collectors.reducing(BinaryOperator.maxBy(Comparator.comparing(Employee::getSalary)))));
+		
+		System.out.println(employee);
+	}
+}

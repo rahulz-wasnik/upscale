@@ -1,0 +1,13 @@
+package com.upscale.spring.simple;
+
+import lombok.Data;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+@Data
+@RequiredArgsConstructor
+public class Student {
+	
+	private String id;
+	private String name;
+}

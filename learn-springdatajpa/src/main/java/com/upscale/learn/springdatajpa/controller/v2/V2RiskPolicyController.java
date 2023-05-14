@@ -1,0 +1,37 @@
+package com.upscale.learn.springdatajpa.controller.v2;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.upscale.learn.springdatajpa.entity.RiskProfile;
+import com.upscale.learn.springdatajpa.service.RiskProfileServiceImpl;
+
+@RequestMapping("v2/riskPolicy")
+@RestController
+public class V2RiskPolicyController {
+
+	@Autowired
+	private RiskProfileServiceImpl service;
+	
+	@GetMapping()
+	public List<RiskProfile> getAll() {
+		return service.getAll();
+	}
+	
+	@PostMapping()
+	public RiskProfile create(@RequestBody RiskProfile riskPolicy) {
+		return service.create(riskPolicy);
+	}
+	
+	@PutMapping()
+	public RiskProfile update(@RequestBody RiskProfile riskPolicy) {
+		return service.update(riskPolicy);
+	}
+}

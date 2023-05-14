@@ -1,0 +1,9 @@
+package java8newfeatures;
+
+public class RandomThings {
+
+	public static void main(String args[]) {
+		
+		
+	}
+}

@@ -1,0 +1,13 @@
+package java8newfeatures;
+
+public class RandomThings {
+
+	private static void main(String args[]) {
+		
+		try {
+			throw new NullPointerException();
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+	}
+}

@@ -1,0 +1,15 @@
+package com.upscale.spring.simple;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class App
+{	
+	
+
+	
+    public static void main( String[] args )
+    {
+    	System.out.println("hey");
+    }
+}

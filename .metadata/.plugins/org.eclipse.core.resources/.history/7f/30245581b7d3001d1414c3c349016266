@@ -1,0 +1,84 @@
+package com.upscale.learn.springdatajpa.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.upscale.learn.springdatajpa.entity.Airport;
+import com.upscale.learn.springdatajpa.entity.Random;
+import com.upscale.learn.springdatajpa.repository.AirportRepository;
+import com.upscale.learn.springdatajpa.repository.RandomRepository;
+import com.upscale.learn.springdatajpa.vo.PolicyMatrixVO;
+import com.upscale.learn.springdatajpa.vo.RandomVO;
+
+
+@RestController
+public class HelloController {
+	
+	@Autowired
+	private RandomRepository randomRepository;
+	
+	@Autowired
+	private AirportRepository airportRepository;
+
+    @GetMapping(path = "/hello", produces = "text/plain")
+    public String hello() {
+        return "Hello, Welcome to expirimenting with spring data jpa!!";
+    }
+
+ 
+    @PostMapping(path = "/random")
+    public void random() {
+        randomRepository.save(new Random("Red", "java_only_trainsent_field", "persistent_only_field"));
+    }
+    
+    @PostMapping(path = "/airport")
+    public void airport() {
+    	airportRepository.save(new Airport("Mumbai"));
+    }
+    
+    @GetMapping(path = "/phases")
+    public List<RandomVO> getPhases() {
+        RandomVO r1 = new RandomVO("a", "a");
+        RandomVO r2 = new RandomVO("a", "a");
+        RandomVO r3 = new RandomVO("a", "a");
+        RandomVO r4 = new RandomVO("a", "a");
+        
+        List<RandomVO> list = new ArrayList<>();
+        list.add(r1);
+        list.add(r2);
+        list.add(r3);
+        list.add(r4);
+        
+        return list;
+    }
+    
+    @PostMapping(path = "/policyMatrix" ,produces = "text/plain", consumes = "application/json")
+    public String createPolicy() {
+    	RandomVO r1 = new RandomVO("a", "a");
+    	return "Policy created";
+    }
+    
+    @GetMapping(path = "/policyMatrix/{id}")
+    public PolicyMatrixVO getPoliyMatrix(@PathVariable String id) {
+    	PolicyMatrixVO policyMatrixVO = new PolicyMatrixVO(
+    				"1",
+    				"A1",
+    				"Major",
+    				"A1R1",
+    				List.of("P1", "P2")
+    			);
+    	return policyMatrixVO;
+    }
+    
+    @PutMapping(path = "/policyMatrix/{id}")
+    public String update() {
+    	return "updated";
+    }
+}

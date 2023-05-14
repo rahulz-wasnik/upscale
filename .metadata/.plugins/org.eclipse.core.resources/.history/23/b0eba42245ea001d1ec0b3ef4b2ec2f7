@@ -1,0 +1,20 @@
+package java8newfeatures.collectors.ex5;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class Employee {
+	
+	int salary;
+	String name;
+	int departmentId;
+}
+
+
+public class FilterEmployesByName {
+
+}

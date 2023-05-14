@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+package java8newfeatures;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/**
+ * @author Rahul
+ *
+ */
+public class FP01Functional {
+
+	public static void main(String args[]){  
+		   
+		  LinkedHashMap<Integer,String> hm=new LinkedHashMap<Integer,String>();  
+		  
+		  hm.put(100,"Amit");  
+		  hm.put(101,"Vijay");  
+		  hm.put(102,"Rahul");  
+		  
+		for(Map.Entry m:hm.entrySet()){  
+		   //System.out.println(m.getKey()+" "+m.getValue());  
+		  }  
+		   
+	HashMap<Integer,String> hm1=new HashMap<Integer,String>();  
+	
+	hm1.put(100,"Amit");  
+	hm1.put(101,"Vijay");  
+	hm1.put(102,"Rahul");  
+	
+	for(Map.Entry m:hm1.entrySet()){  
+		System.out.println(m.getKey()+" "+m.getValue());  
+	}  
+}  
+
+}

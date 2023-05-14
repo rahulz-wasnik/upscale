@@ -1,0 +1,14 @@
+package com.upscale.learn.springdatajpa.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.upscale.learn.springdatajpa.entity.RiskProfileMetaData;
+
+public interface RiskProfileMetaDataRepository extends JpaRepository<RiskProfileMetaData, Long> {
+	
+	List<RiskProfileMetaData> deleteByRiskProfileId();
+
+}
+

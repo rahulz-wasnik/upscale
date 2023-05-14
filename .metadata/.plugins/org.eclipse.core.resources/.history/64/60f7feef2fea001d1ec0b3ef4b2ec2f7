@@ -1,0 +1,6 @@
+package java8newfeatures;
+
+public class Department {
+
+	private String id;
+}
